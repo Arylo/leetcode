@@ -2,7 +2,6 @@
  * 执行用时：8780 ms
  * 内存消耗：43.1 MB
  */
-
 export function maxSatisfied(customers: number[], grumpy: number[], X: number): number {
   const arr: number[] = [];
   for (let i = 0; i < customers.length - X + 1; i += 1) {
