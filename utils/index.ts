@@ -3,6 +3,8 @@ import glob from 'glob';
 import path from 'path';
 
 export const startTest = (cwd: string, functionName: string, units: Array<[any[], any]>) => {
+  let hasFail = false;
+
   console.log(`Q ${path.basename(cwd)}`);
   const filenames = glob.sync("*[^.spec].ts", { cwd });
   if (filenames.length === 0) {
@@ -26,8 +28,11 @@ export const startTest = (cwd: string, functionName: string, units: Array<[any[]
         console.log('-', filename, `[${index}]`, 'Pass');
       } catch (error) {
         console.log('-', filename, `[${index}]`, 'Fail');
+        hasFail = true;
       }
     });
   });
+
+  hasFail && process.exit(1);
 };
 
