@@ -12,18 +12,22 @@ export const startTest = (cwd: string, functionName: string, units: Array<[any[]
     const fnModule = require(path.resolve(cwd, filename))
     const fn = fnModule[functionName];
     if (typeof fn !== 'function') {
-      console.error('-', functionName, 'Miss');
+      console.error('-', 'Miss', functionName);
+      return;
+    }
+    if (units.length === 0) {
+      console.error('-', 'Miss Units');
       return;
     }
 
-    try {
-      units.forEach((unit, index) => {
+    units.forEach((unit, index) => {
+      try {
         assert.deepStrictEqual(fn(...unit[0]), unit[1]);
-      });
-      console.log('-', filename, 'Pass');
-    } catch (error) {
-      console.log('-', filename, 'Fail');
-    }
+        console.log('-', filename, `[${index}]`, 'Pass');
+      } catch (error) {
+        console.log('-', filename, `[${index}]`, 'Fail');
+      }
+    });
   });
 };
 
