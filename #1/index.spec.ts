@@ -7,4 +7,4 @@ const units: Array<[any[], any]> = [
   [[[3,3], 6], [0,1]],
 ];
 
-startTest(__dirname, fnName, units);
+export default startTest(__dirname, fnName, units);

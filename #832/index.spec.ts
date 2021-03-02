@@ -12,4 +12,4 @@ const units: Array<[any[], any]> = [
   ],
 ];
 
-startTest(__dirname, fnName, units);
+export default startTest(__dirname, fnName, units);

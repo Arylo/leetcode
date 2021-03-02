@@ -8,4 +8,4 @@ const units: Array<[any[], any]> = [
   [[[1,3,5,6], 0], 0],
 ];
 
-startTest(__dirname, fnName, units);
+export default startTest(__dirname, fnName, units);

@@ -9,4 +9,4 @@ const units: Array<[any[], any]> = [
   [[customers, grumpy, X], 16],
 ];
 
-startTest(__dirname, fnName, units);
+export default startTest(__dirname, fnName, units);

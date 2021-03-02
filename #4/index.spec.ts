@@ -9,4 +9,4 @@ const units: Array<[any[], any]> = [
   [[[2], []], 2.00000],
 ];
 
-startTest(__dirname, fnName, units);
+export default startTest(__dirname, fnName, units);
