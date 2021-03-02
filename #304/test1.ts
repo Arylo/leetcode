@@ -2,6 +2,10 @@ export function sumRegion(matrix: number[][], row1: number, col1: number, row2: 
   return new NumMatrix(matrix).sumRegion(row1, col1, row2, col2);
 }
 
+/**
+ * 执行用时：216 ms
+ * 内存消耗：43 MB
+ */
 class NumMatrix {
   private matrix: number[][] = [];
   constructor(matrix: number[][]) {
