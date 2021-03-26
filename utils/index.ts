@@ -7,7 +7,7 @@ export const startTest = (cwd: string, functionName: string, units: Array<[any[]
   const result: [number, [string, number, {source: any, target: any}][]] = [0, []];
 
   console.log(`Q ${path.basename(cwd)}`);
-  const filenames = glob.sync("*[^.spec].ts", { cwd });
+  const filenames = glob.sync("*[^.spec|.d].ts", { cwd });
   if (filenames.length === 0) {
     console.error('-', chalk.bgYellow('Miss File'));
   }
